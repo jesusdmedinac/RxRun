@@ -1,5 +1,6 @@
 package com.mupper.reactiveelements
 
+import com.mupper.reactiveelements.util.RxImmediateSchedulerRule
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.SpyK
@@ -11,6 +12,7 @@ import io.reactivex.Single
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 
 /**
@@ -19,6 +21,11 @@ import org.junit.Test
  * Andromeda
  */
 class ReactiveElementsRunOnIoTest {
+
+    @Rule
+    @JvmField
+    var testSchedulerRule = RxImmediateSchedulerRule()
+
     @SpyK
     var spyObservable = Observable.just(Unit)
 
@@ -143,6 +150,20 @@ class ReactiveElementsRunOnIoTest {
         // Then
         verify {
             spyCompletable.observeOn(Schedulers.io())
+        }
+    }
+
+    @Test
+    fun `runOnIo should call onNext block`() {
+        // Given
+        val onNextBlock = {}
+
+        // When
+        spyObservable.runOnIo()
+
+        // Then
+        verify {
+            spyObservable.subscribeOn(Schedulers.io())
         }
     }
 }
