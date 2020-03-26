@@ -1,5 +1,6 @@
 package com.mupper.reactiveelements
 
+import com.mupper.reactiveelements.util.TestClass
 import io.mockk.spyk
 import io.mockk.verify
 import io.reactivex.Completable
@@ -57,13 +58,9 @@ class ReactiveElementsAnyToReactiveElementTest {
     }
 
     @Test
-    fun `subscribe should call someFunction of Test class given completable from toCompletable`() {
+    fun `subscribe should call someFunction of TestClass given completable from toCompletable`() {
         // Given
-        class Test {
-            fun someFunction() {}
-        }
-
-        val spyTest: Test = spyk()
+        val spyTest: TestClass = spyk()
 
         val expectedAction = {
             spyTest.someFunction()

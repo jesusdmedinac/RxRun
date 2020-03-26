@@ -34,6 +34,12 @@ fun Completable.runOnIo(
 ): Disposable =
     subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribe(onNext, onError)
 
+// Run any on Io
+fun (() -> Unit).runOnIo(
+    onError: (t: Throwable) -> Unit = Throwable::printStackTrace,
+    onNext: () -> Unit = {}
+) = Completable.fromAction(this).runOnIo(onError, onNext)
+
 // Run on main
 fun <T> Observable<T>.runOnMain(
     onError: (t: Throwable) -> Unit = Throwable::printStackTrace,
