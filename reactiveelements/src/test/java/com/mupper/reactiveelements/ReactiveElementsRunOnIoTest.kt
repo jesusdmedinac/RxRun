@@ -27,7 +27,6 @@ import java.lang.RuntimeException
  * Andromeda
  */
 class ReactiveElementsRunOnIoTest {
-
     @Rule
     @JvmField
     var testSchedulerRule = RxImmediateSchedulerRule()
