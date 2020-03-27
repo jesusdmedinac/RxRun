@@ -38,7 +38,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyObservable emitOn io
+        spyObservable emitOn io()
 
         // Then
         verify {
@@ -51,7 +51,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spySingle emitOn io
+        spySingle emitOn io()
 
         // Then
         verify {
@@ -64,7 +64,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyFlowable emitOn io
+        spyFlowable emitOn io()
 
         // Then
         verify {
@@ -77,7 +77,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyCompletable emitOn io
+        spyCompletable emitOn io()
 
         // Then
         verify {
@@ -90,7 +90,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyObservable emitOn computation
+        spyObservable emitOn computation()
 
         // Then
         verify {
@@ -103,7 +103,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spySingle emitOn computation
+        spySingle emitOn computation()
 
         // Then
         verify {
@@ -116,7 +116,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyFlowable emitOn computation
+        spyFlowable emitOn computation()
 
         // Then
         verify {
@@ -129,7 +129,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyCompletable emitOn computation
+        spyCompletable emitOn computation()
 
         // Then
         verify {
@@ -142,7 +142,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyObservable emitOn newThread
+        spyObservable emitOn newThread()
 
         // Then
         verify {
@@ -155,7 +155,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spySingle emitOn newThread
+        spySingle emitOn newThread()
 
         // Then
         verify {
@@ -168,7 +168,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyFlowable emitOn newThread
+        spyFlowable emitOn newThread()
 
         // Then
         verify {
@@ -181,7 +181,7 @@ class ReactiveElementsEmitOnTest {
         // Given
 
         // When
-        spyCompletable emitOn newThread
+        spyCompletable emitOn newThread()
 
         // Then
         verify {

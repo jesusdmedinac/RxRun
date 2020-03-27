@@ -39,7 +39,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyObservable subsOn io
+        spyObservable subsOn io()
 
         // Then
         verify {
@@ -52,7 +52,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spySingle subsOn io
+        spySingle subsOn io()
 
         // Then
         verify {
@@ -65,7 +65,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyFlowable subsOn io
+        spyFlowable subsOn io()
 
         // Then
         verify {
@@ -78,7 +78,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyCompletable subsOn io
+        spyCompletable subsOn io()
 
         // Then
         verify {
@@ -91,7 +91,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyObservable subsOn computation
+        spyObservable subsOn computation()
 
         // Then
         verify {
@@ -104,7 +104,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spySingle subsOn computation
+        spySingle subsOn computation()
 
         // Then
         verify {
@@ -117,7 +117,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyFlowable subsOn computation
+        spyFlowable subsOn computation()
 
         // Then
         verify {
@@ -130,7 +130,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyCompletable subsOn computation
+        spyCompletable subsOn computation()
 
         // Then
         verify {
@@ -143,7 +143,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyObservable subsOn newThread
+        spyObservable subsOn newThread()
 
         // Then
         verify {
@@ -156,7 +156,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spySingle subsOn newThread
+        spySingle subsOn newThread()
 
         // Then
         verify {
@@ -169,7 +169,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyFlowable subsOn newThread
+        spyFlowable subsOn newThread()
 
         // Then
         verify {
@@ -182,7 +182,7 @@ class ReactiveElementsSubsOnTest {
         // Given
 
         // When
-        spyCompletable subsOn newThread
+        spyCompletable subsOn newThread()
 
         // Then
         verify {

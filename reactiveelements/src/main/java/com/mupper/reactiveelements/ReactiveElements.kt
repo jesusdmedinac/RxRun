@@ -16,13 +16,16 @@ fun Any.toFlowable() = Flowable.just(this)
 
 fun (() -> Unit).toCompletable() = Completable.fromAction(this)
 
-val io = Schedulers.io()
+fun io() = Schedulers.io()
 
-val computation = Schedulers.computation()
+fun computation() = Schedulers.computation()
 
-val newThread = Schedulers.newThread()
+fun newThread() = Schedulers.newThread()
 
-infix fun <T> Observable<T>.subsOn(scheduler: Scheduler) =
+fun mainThread() = AndroidSchedulers.mainThread()
+
+// Abbreviation of subscribeOn
+infix fun <T> Observable<T>.subsOn(scheduler: Scheduler): Observable<T> =
     this.subscribeOn(scheduler)
 
 infix fun <T> Single<T>.subsOn(scheduler: Scheduler) =
@@ -34,6 +37,7 @@ infix fun <T> Flowable<T>.subsOn(scheduler: Scheduler) =
 infix fun Completable.subsOn(scheduler: Scheduler) =
     this.subscribeOn(scheduler)
 
+// Abbreviation of observeOn
 infix fun <T> Observable<T>.emitOn(scheduler: Scheduler): Observable<T> =
     this.observeOn(scheduler)
 
