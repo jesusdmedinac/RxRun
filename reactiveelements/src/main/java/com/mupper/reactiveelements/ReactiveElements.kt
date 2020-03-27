@@ -8,11 +8,11 @@ import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-fun Any.toObservable() = Observable.just(this)
+fun <T> T.toObservable() = Observable.just(this)
 
-fun Any.toSingle() = Single.just(this)
+fun <T> T.toSingle() = Single.just(this)
 
-fun Any.toFlowable() = Flowable.just(this)
+fun <T> T.toFlowable() = Flowable.just(this)
 
 fun (() -> Unit).toCompletable() = Completable.fromAction(this)
 
@@ -23,7 +23,7 @@ fun computation() = Schedulers.computation()
 
 fun newThread() = Schedulers.newThread()
 
-fun mainThread() = AndroidSchedulers.mainThread()
+fun mainThread(): Scheduler = AndroidSchedulers.mainThread()
 
 // Abbreviation of subscribeOn
 infix fun <T> Observable<T>.subsOn(scheduler: Scheduler): Observable<T> =
