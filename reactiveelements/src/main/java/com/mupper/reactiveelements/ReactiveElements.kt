@@ -16,6 +16,7 @@ fun Any.toFlowable() = Flowable.just(this)
 
 fun (() -> Unit).toCompletable() = Completable.fromAction(this)
 
+// Abbreviation of schedulers
 fun io() = Schedulers.io()
 
 fun computation() = Schedulers.computation()
