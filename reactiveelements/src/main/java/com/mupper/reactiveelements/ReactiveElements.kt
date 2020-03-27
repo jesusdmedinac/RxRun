@@ -50,3 +50,29 @@ infix fun <T> Flowable<T>.emitOn(scheduler: Scheduler): Flowable<T> =
 
 infix fun Completable.emitOn(scheduler: Scheduler) =
     this.observeOn(scheduler)
+
+// Only subscribe and observe on io
+inline infix fun <T> Observable<T>.onIo(block: Observable<T>.() -> Observable<T>): Observable<T> =
+    (block() subsOn io()) emitOn io()
+
+inline infix fun <T> Single<T>.onIo(block: Single<T>.() -> Single<T>): Single<T> =
+    (block() subsOn io()) emitOn io()
+
+inline infix fun <T> Flowable<T>.onIo(block: Flowable<T>.() -> Flowable<T>): Flowable<T> =
+    (block() subsOn io()) emitOn io()
+
+inline infix fun Completable.onIo(block: Completable.() -> Completable): Completable =
+    (block() subsOn io()) emitOn io()
+
+// Only subscribe on io and observe on main
+inline infix fun <T> Observable<T>.onMain(block: Observable<T>.() -> Observable<T>): Observable<T> =
+    (block() subsOn io()) emitOn mainThread()
+
+inline infix fun <T> Single<T>.onMain(block: Single<T>.() -> Single<T>): Single<T> =
+    (block() subsOn io()) emitOn mainThread()
+
+inline infix fun <T> Flowable<T>.onMain(block: Flowable<T>.() -> Flowable<T>): Flowable<T> =
+    (block() subsOn io()) emitOn mainThread()
+
+inline infix fun Completable.onMain(block: Completable.() -> Completable): Completable =
+    (block() subsOn io()) emitOn mainThread()

@@ -44,7 +44,7 @@ class ReactiveElementsOnIoTest {
         // Given
 
         // When
-        spyObservable.onIo()
+        spyObservable onIo { this }
 
         // Then
         verify {
@@ -58,7 +58,7 @@ class ReactiveElementsOnIoTest {
         every { spyObservable.subscribeOn(Schedulers.io()) } returns spyObservable
 
         // When
-        spyObservable.onIo()
+        spyObservable onIo { this }
 
         // Then
         verify {
@@ -71,7 +71,7 @@ class ReactiveElementsOnIoTest {
         // Given
 
         // When
-        spySingle.onIo()
+        spySingle onIo { this }
 
         // Then
         verify {
@@ -85,7 +85,7 @@ class ReactiveElementsOnIoTest {
         every { spySingle.subscribeOn(Schedulers.io()) } returns spySingle
 
         // When
-        spySingle.onIo()
+        spySingle onIo { this }
 
         // Then
         verify {
@@ -98,7 +98,7 @@ class ReactiveElementsOnIoTest {
         // Given
 
         // When
-        spyFlowable.onIo()
+        spyFlowable onIo { this }
 
         // Then
         verify {
@@ -112,7 +112,7 @@ class ReactiveElementsOnIoTest {
         every { spyFlowable.subscribeOn(Schedulers.io()) } returns spyFlowable
 
         // When
-        spyFlowable.onIo()
+        spyFlowable onIo { this }
 
         // Then
         verify {
@@ -125,7 +125,7 @@ class ReactiveElementsOnIoTest {
         // Given
 
         // When
-        spyCompletable.onIo()
+        spyCompletable onIo { this }
 
         // Then
         verify {
@@ -139,7 +139,7 @@ class ReactiveElementsOnIoTest {
         every { spyCompletable.subscribeOn(Schedulers.io()) } returns spyCompletable
 
         // When
-        spyCompletable.onIo()
+        spyCompletable onIo { this }
 
         // Then
         verify {
