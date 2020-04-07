@@ -90,7 +90,7 @@ val observable = Observable.just("Some text")
 val someText: String = observable.getOnIo()
 ```
 
-## Get on io
+## Get on main
 
 When you need to use a `blockingFirst`, `blockingGet` or `blockingAwait` on main thread, you can use getOnMain.
 
